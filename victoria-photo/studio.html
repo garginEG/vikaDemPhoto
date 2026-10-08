@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>document.documentElement.className += ' js';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студийная съёмка — Виктория, фотограф в Москве</title>
+    <meta name="description" content="Студийная фотосъёмка в Москве. Портреты, fashion, lookbook'и. Портфолио и цены.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Victoria</a>
+        <nav class="nav" id="nav">
+            <a href="index.html">Обо мне</a>
+            <a href="studio.html" class="active">Студия</a>
+            <a href="corporate.html">Корпоратив</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="eyebrow reveal">01 / Основное направление</span>
+            <h1>
+                <span class="line line-mask"><span>Студия</span></span>
+            </h1>
+            <div class="hero-meta">
+                <p class="reveal">Камерное пространство, контролируемый свет и время, которое мы посвящаем только вашему образу. Портреты, fashion, lookbook'и.</p>
+                <div class="hero-location reveal">
+                    <span class="eyebrow">Studios</span>
+                    <p>Москва · отбор площадок</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">scroll</div>
+    </section>
+
+    <!-- INTRO -->
+    <section>
+        <div class="container">
+            <div class="intro">
+                <div class="intro-text">
+                    <span class="eyebrow reveal">Что это</span>
+                    <h2 data-split>Свет, форма<br>и характер.</h2>
+                    <p class="reveal">Студийная съёмка — это про время, посвящённое только вам. Никаких случайных людей в кадре, погоды, спешки — только продуманный свет и пространство, в котором рождается образ.</p>
+                    <p class="reveal">Снимаю на профессиональное оборудование, работаю с импульсным и постоянным светом. Помогаю с позированием — даже если вы никогда не снимались раньше.</p>
+                    <p class="reveal">Перед каждой съёмкой провожу бриф: обсуждаем настроение, референсы, образы. Вы получаете не просто фотографии — вы получаете историю, рассказанную в кадре.</p>
+                </div>
+                <div class="intro-image reveal"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section>
+        <div class="container">
+            <div class="portfolio-header">
+                <h2 data-split>Избранные<br>работы</h2>
+                <p class="reveal" style="max-width: 320px; color: var(--color-text-muted);">Демонстрационная подборка. Полное портфолио — по запросу в Telegram.</p>
+            </div>
+            <div class="portfolio-grid" id="portfolio-grid" data-category="studio">
+                <!-- Подгружается из Supabase через js/render.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <span class="eyebrow reveal">Цены</span>
+                <h2 data-split>Три формата<br>под разные задачи</h2>
+            </div>
+            <div class="pricing-grid" id="pricing-grid" data-category="studio">
+                <!-- Подгружается из Supabase через js/render.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <span class="eyebrow reveal">Готовы начать?</span>
+            <h2 class="reveal" style="margin-top: 24px;">Подберём дату<br>и формат под вас.</h2>
+            <p class="reveal">Напишите в Telegram — расскажу о свободных слотах в этом и следующем месяце.</p>
+            <a href="#" class="btn btn-accent reveal">Написать в Telegram <span class="btn-arrow">→</span></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Victoria</h3>
+                <p>Фотограф из Москвы. Студийная и корпоративная съёмка.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Меню</h5>
+                <ul>
+                    <li><a href="index.html">Обо мне</a></li>
+                    <li><a href="studio.html">Студия</a></li>
+                    <li><a href="corporate.html">Корпоратив</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Контакты</h5>
+                <ul>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="mailto:hello@victoria.photo">hello@victoria.photo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Локация</h5>
+                <ul>
+                    <li>Москва</li>
+                    <li>Выезд по РФ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Victoria Photography</span>
+            <span><a href="admin.html" style="opacity: 0.5;">Admin</a></span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.js"></script>
+</body>
+</html>

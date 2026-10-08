@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>document.documentElement.className += ' js';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корпоративная съёмка — Виктория, фотограф в Москве</title>
+    <meta name="description" content="Корпоративная фотосъёмка в Москве. Команды, мероприятия, бизнес-портреты. Новое направление — особые условия.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Victoria</a>
+        <nav class="nav" id="nav">
+            <a href="index.html">Обо мне</a>
+            <a href="studio.html">Студия</a>
+            <a href="corporate.html" class="active">Корпоратив</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="eyebrow reveal">02 / Новое направление</span>
+            <h1>
+                <span class="line line-mask"><span>Корпоратив</span></span>
+            </h1>
+            <div class="hero-meta">
+                <p class="reveal">Бизнес-портреты, командные съёмки, мероприятия. Я только начинаю работать с этим форматом — поэтому первые проекты на особых условиях.</p>
+                <div class="hero-location reveal">
+                    <span class="eyebrow">Status</span>
+                    <p>Открыта к первым клиентам</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">scroll</div>
+    </section>
+
+    <!-- HONEST NOTE -->
+    <section>
+        <div class="container">
+            <div class="starting-note">
+                <span class="eyebrow reveal">Честно</span>
+                <h2 data-split>Я только<br>начинаю.</h2>
+                <p class="reveal">За плечами — годы студийной съёмки, сотни портретов и понимание света. Но корпоративная фотография — это другой ритм: команды, переговорки, динамика мероприятий, бизнес-эстетика.</p>
+                <p class="reveal">Я осознанно открываю это направление сейчас. Технически и художественно я готова — но мне важно набрать опыт именно в корпоративном контексте. Поэтому для первых клиентов действуют особые условия: ниже цены, больше внимания, личное участие на каждом этапе.</p>
+                <p class="reveal">Если вы готовы стать частью этой истории — давайте поговорим.</p>
+
+                <div class="starting-offer reveal">
+                    <div class="starting-offer-badge">−40%</div>
+                    <div class="starting-offer-text">
+                        <h3>Первым клиентам</h3>
+                        <p>Скидка действует на любую корпоративную съёмку до конца лета 2026. Бронь — лично по Telegram.</p>
+                    </div>
+                    <a href="#" class="btn btn-accent">Связаться</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFERINGS -->
+    <section>
+        <div class="container">
+            <div class="portfolio-header">
+                <h2 class="reveal">Что я могу<br>предложить уже сейчас</h2>
+                <p class="reveal" style="max-width: 320px; color: var(--color-text-muted);">Три формата, в которых я уверена и которые отрабатываю на практике.</p>
+            </div>
+            <div class="offerings">
+                <div class="offering-item reveal">
+                    <div class="offering-number">01</div>
+                    <h4>Бизнес-портреты</h4>
+                    <p>Портреты для сайта компании, LinkedIn, презентаций. Единая стилистика для всей команды, выезд в офис или съёмка в студии.</p>
+                </div>
+                <div class="offering-item reveal">
+                    <div class="offering-number">02</div>
+                    <h4>Командные съёмки</h4>
+                    <p>Атмосферные кадры рабочего процесса, групповые портреты, репортаж рабочего дня. Для соцсетей бренда и внутренних материалов.</p>
+                </div>
+                <div class="offering-item reveal">
+                    <div class="offering-number">03</div>
+                    <h4>Мероприятия</h4>
+                    <p>Конференции, тимбилдинги, открытия, презентации. Репортаж + постановочные кадры со спикерами и гостями.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO (corporate) -->
+    <section>
+        <div class="container">
+            <div class="portfolio-header">
+                <h2 class="reveal">Первые<br>работы</h2>
+                <p class="reveal" style="max-width: 320px; color: var(--color-text-muted);">Подборка из корпоративных съёмок. Обновляется по мере новых проектов.</p>
+            </div>
+            <div class="portfolio-grid" id="portfolio-grid" data-category="corporate">
+                <!-- Подгружается из Supabase через js/render.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section>
+        <div class="container">
+            <div class="intro">
+                <div class="intro-text">
+                    <span class="eyebrow reveal">Как мы работаем</span>
+                    <h2 data-split>Простой<br>и понятный<br>процесс.</h2>
+                    <p class="reveal">Без длинных бюрократических цепочек. Договариваемся напрямую, фиксируем задачу, согласовываем дату и формат — и я приезжаю.</p>
+                </div>
+                <div>
+                    <div class="offerings" style="grid-template-columns: 1fr;">
+                        <div class="offering-item reveal">
+                            <div class="offering-number">→ 01</div>
+                            <h4>Бриф</h4>
+                            <p>Созваниваемся или переписываемся. Я задаю вопросы про задачу, людей, локацию и сроки.</p>
+                        </div>
+                        <div class="offering-item reveal">
+                            <div class="offering-number">→ 02</div>
+                            <h4>Съёмка</h4>
+                            <p>Приезжаю заранее, выставляю свет, общаюсь с командой. Снимаю мягко и без давления — людям комфортно в кадре.</p>
+                        </div>
+                        <div class="offering-item reveal">
+                            <div class="offering-number">→ 03</div>
+                            <h4>Передача</h4>
+                            <p>Обработанные фото — за 5–7 дней. Все исходники остаются у вас, передача через облако.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING (corporate) -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <span class="eyebrow reveal">Цены</span>
+                <h2 class="reveal">Форматы<br>и стоимость</h2>
+            </div>
+            <div class="pricing-grid" id="pricing-grid" data-category="corporate">
+                <!-- Подгружается из Supabase через js/render.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <span class="eyebrow reveal">Первые клиенты</span>
+            <h2 class="reveal" style="margin-top: 24px;">Расскажите о вашей<br>задаче — посчитаем.</h2>
+            <p class="reveal">Каждый проект обсуждаем индивидуально — со скидкой −40% для первых клиентов.</p>
+            <a href="#" class="btn btn-accent reveal">Написать в Telegram <span class="btn-arrow">→</span></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Victoria</h3>
+                <p>Фотограф из Москвы. Студийная и корпоративная съёмка.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Меню</h5>
+                <ul>
+                    <li><a href="index.html">Обо мне</a></li>
+                    <li><a href="studio.html">Студия</a></li>
+                    <li><a href="corporate.html">Корпоратив</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Контакты</h5>
+                <ul>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="mailto:hello@victoria.photo">hello@victoria.photo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Локация</h5>
+                <ul>
+                    <li>Москва</li>
+                    <li>Выезд по РФ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Victoria Photography</span>
+            <span><a href="admin.html" style="opacity: 0.5;">Admin</a></span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.js"></script>
+</body>
+</html>

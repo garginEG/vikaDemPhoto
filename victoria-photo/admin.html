@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>document.documentElement.className += ' js';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Админка — Victoria Photography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="login-screen">
+        <div class="login-card">
+            <h1>Admin</h1>
+            <p class="login-subtitle">Войдите, чтобы управлять портфолио и ценами.</p>
+
+            <div id="config-warning" class="alert error" style="display: none;">
+                Supabase не настроен. Откройте <code>js/supabase-client.js</code> и вставьте свои ключи.
+            </div>
+
+            <form id="login-form">
+                <div class="field">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required autocomplete="username">
+                </div>
+                <div class="field">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" required autocomplete="current-password">
+                </div>
+                <div id="login-error" class="alert error" style="display: none;"></div>
+                <button type="submit" class="admin-btn admin-btn-full" id="login-btn">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" style="display: none;">
+        <header class="admin-header">
+            <h1>Victoria · Админка</h1>
+            <div class="admin-header-actions">
+                <span class="admin-header-user" id="admin-user-email"></span>
+                <a href="index.html" class="admin-btn admin-btn-secondary" target="_blank">Открыть сайт ↗</a>
+                <button class="admin-btn admin-btn-secondary" id="logout-btn">Выйти</button>
+            </div>
+        </header>
+
+        <div class="admin-container">
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="portfolio">Портфолио</button>
+                <button class="admin-tab" data-tab="pricing">Цены</button>
+            </div>
+
+            <!-- ====== PORTFOLIO ====== -->
+            <section class="admin-section active" id="section-portfolio">
+
+                <div class="section-header">
+                    <h2>Управление портфолио</h2>
+                    <div class="category-switcher" id="category-switcher">
+                        <button type="button" class="category-btn active" data-category="studio">Студия</button>
+                        <button type="button" class="category-btn" data-category="corporate">Корпоратив</button>
+                    </div>
+                </div>
+
+                <label class="upload-zone" id="upload-zone">
+                    <svg class="upload-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p><strong>Перетащите фото сюда</strong> или нажмите, чтобы выбрать</p>
+                    <p class="upload-hint">Раздел: <strong id="upload-category-label">Студия</strong> · JPG, PNG, WebP до 10 МБ · можно несколько за раз</p>
+                    <input type="file" id="file-input" accept="image/*" multiple>
+                </label>
+
+                <div id="upload-progress"></div>
+
+                <div class="photo-grid" id="photo-grid">
+                    <p style="grid-column: 1/-1; text-align: center; color: var(--admin-muted); padding: 40px;">Загрузка…</p>
+                </div>
+            </section>
+
+            <!-- ====== PRICING ====== -->
+            <section class="admin-section" id="section-pricing">
+
+                <div class="section-header">
+                    <h2>Управление ценами</h2>
+                    <div class="category-switcher" id="pricing-category-switcher">
+                        <button type="button" class="category-btn active" data-category="studio">Студия</button>
+                        <button type="button" class="category-btn" data-category="corporate">Корпоратив</button>
+                    </div>
+                </div>
+
+                <div class="pricing-toolbar">
+                    <button type="button" class="admin-btn admin-btn-accent" id="add-pricing-btn">+ Добавить тариф</button>
+                </div>
+
+                <div class="price-editor" id="price-editor">
+                    <p style="text-align: center; color: var(--admin-muted); padding: 40px;">Загрузка…</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

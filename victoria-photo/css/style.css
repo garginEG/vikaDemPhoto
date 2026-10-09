@@ -445,10 +445,70 @@ section {
 
 
 /* Masonry — фото любого размера ложатся ровно по 3 колонкам */
-.portfolio-grid {
-    columns: 3;
-    column-gap: 24px;
+
+/* Карусели портфолио */
+.portfolio-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
+.portfolio-carousel .portfolio-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    flex: 1;
+    min-width: 0;
+    columns: unset;
+    scrollbar-width: none;
+}
+
+.portfolio-carousel .portfolio-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-carousel .portfolio-item {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    margin-bottom: 0;
+    scroll-snap-align: start;
+}
+
+.portfolio-carousel .portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.carousel-arrow {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
 
 .portfolio-item {
     position: relative;

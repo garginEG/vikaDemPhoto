@@ -62,20 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('nav');
 
     if (burger && nav) {
-            burger.addEventListener('click', () => {
-            burger.classList.toggle('open');
-            nav.classList.toggle('open');
-            document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
-            document.body.classList.toggle('menu-open', nav.classList.contains('open'));
-        });
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        nav.classList.toggle('open');
+        const isOpen = nav.classList.contains('open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.body.classList.toggle('menu-open', isOpen);
+    });
 
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('open');
-                nav.classList.remove('open');
-                document.body.style.overflow = '';
-            });
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('open');
+            nav.classList.remove('open');
+            document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         });
+    });
     }
 
     // --------------------------------------------

@@ -62,10 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('nav');
 
     if (burger && nav) {
-        burger.addEventListener('click', () => {
+            burger.addEventListener('click', () => {
             burger.classList.toggle('open');
             nav.classList.toggle('open');
             document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+            document.body.classList.toggle('menu-open', nav.classList.contains('open'));
         });
 
         nav.querySelectorAll('a').forEach(link => {

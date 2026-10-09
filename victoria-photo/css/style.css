@@ -877,7 +877,7 @@ section {
    ============================================ */
 
 @media (max-width: 900px) {
-    .nav {
+.nav {
         position: fixed;
         top: 0;
         right: 0;
@@ -892,6 +892,7 @@ section {
         transition: transform var(--transition);
         mix-blend-mode: normal;
         color: var(--color-bg);
+        z-index: 100;
     }
 
     .nav.open {
@@ -903,6 +904,18 @@ section {
         font-family: var(--font-serif);
         text-transform: none;
         letter-spacing: 0;
+        opacity: 1;
+        color: #F2EFEA;
+    }
+
+    .nav a.active::after {
+        background: #F2EFEA;
+    }
+
+    /* Когда меню открыто — убираем difference у хедера */
+    .header:has(.nav.open) {
+        mix-blend-mode: normal;
+        color: #F2EFEA;
     }
 
     .burger {
@@ -1205,4 +1218,13 @@ section {
     font-size: 1.25rem;
     color: var(--color-accent);
     line-height: 1.7;
+}
+
+body.menu-open .header {
+    mix-blend-mode: normal;
+    color: #F2EFEA;
+}
+
+body.menu-open .nav {
+    background: #1A1815;
 }

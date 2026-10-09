@@ -923,12 +923,12 @@ section {
         z-index: 101;
     }
 
-    body.menu-open .header {
+    .body.menu-open .header {
         mix-blend-mode: normal;
         color: #F2EFEA;
     }
 
-    body.menu-open .nav {
+    .body.menu-open .nav {
         background: #1A1815;
     }
 

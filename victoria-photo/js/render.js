@@ -77,4 +77,41 @@
         if (window.observeReveals) window.observeReveals();
     }
 
+    
+    // -------- PORTFOLIO CAROUSELS --------
+    document.querySelectorAll('.portfolio-carousel').forEach((carousel) => {
+        const grid = carousel.querySelector('.portfolio-grid');
+        const prevButton = carousel.querySelector('.carousel-prev');
+        const nextButton = carousel.querySelector('.carousel-next');
+
+        if (!grid || !prevButton || !nextButton) return;
+
+        const updateButtons = () => {
+            const maxScroll = grid.scrollWidth - grid.clientWidth;
+
+            prevButton.disabled = grid.scrollLeft <= 1;
+            nextButton.disabled = grid.scrollLeft >= maxScroll - 1;
+        };
+
+        prevButton.addEventListener('click', () => {
+            grid.scrollBy({
+                left: -grid.clientWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        nextButton.addEventListener('click', () => {
+            grid.scrollBy({
+                left: grid.clientWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        grid.addEventListener('scroll', updateButtons);
+        window.addEventListener('resize', updateButtons);
+
+        updateButtons();
+    });
+
+
 })();

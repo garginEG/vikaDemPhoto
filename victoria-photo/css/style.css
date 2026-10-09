@@ -923,6 +923,15 @@ section {
         z-index: 101;
     }
 
+    body.menu-open .header {
+        mix-blend-mode: normal;
+        color: #F2EFEA;
+    }
+
+    body.menu-open .nav {
+        background: #1A1815;
+    }
+
     .intro,
     .services-preview,
     .facts-grid,
@@ -1220,11 +1229,3 @@ section {
     line-height: 1.7;
 }
 
-body.menu-open .header {
-    mix-blend-mode: normal;
-    color: #F2EFEA;
-}
-
-body.menu-open .nav {
-    background: #1A1815;
-}

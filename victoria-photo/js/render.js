@@ -64,7 +64,7 @@
                     <div class="price-card-amount">${escapeHTML(plan.price)}<span>${escapeHTML(plan.currency || '₽')}</span></div>
                     <div class="price-card-duration">${escapeHTML(plan.duration || '')}</div>
                     <ul class="price-card-features">${features}</ul>
-                    <a href="#" class="${btnClass}">${escapeHTML(plan.cta_text || 'Забронировать')}</a>
+                    <a href="https://t.me/dmdnko_v" target="_blank" rel="noopener" class="${btnClass}">${escapeHTML(plan.cta_text || 'Забронировать')}</a>
                 `;
 
                 pricingEl.appendChild(card);

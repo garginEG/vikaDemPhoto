@@ -12,32 +12,35 @@
     }
 
     // -------- PORTFOLIO --------
-    const portfolioEl = document.getElementById('portfolio-grid');
-    if (portfolioEl) {
-        const category = portfolioEl.dataset.category || null;
-        const items = await window.DataAPI.loadPortfolio(category);
-        portfolioEl.innerHTML = '';
+        const portfolioElements = document.querySelectorAll('.portfolio-grid');
 
-        if (!items.length) {
-            portfolioEl.innerHTML = '<div class="portfolio-empty">Скоро здесь появятся работы</div>';
-        } else {
-            items.forEach((item, i) => {
-                const hasPhoto = !!item.src;
-                const div = document.createElement('div');
-                div.className = `portfolio-item reveal ${hasPhoto ? '' : 'is-placeholder'}`;
-                div.dataset.label = item.label || '';
+        for (const portfolioEl of portfolioElements) {
+    const category = portfolioEl.dataset.category || null;
+    const items = await window.DataAPI.loadPortfolio(category);
 
-                if (hasPhoto) {
-                    div.innerHTML = `<img src="${escapeHTML(item.src)}" alt="${escapeHTML(item.label || 'Portfolio')}" loading="lazy">`;
-                }
+    portfolioEl.innerHTML = '';
 
-                portfolioEl.appendChild(div);
-            });
+    if (!items.length) {
+        portfolioEl.innerHTML =
+            '<div class="portfolio-empty">Скоро здесь появятся работы</div>';
+    } else {
+        items.forEach((item) => {
+            const hasPhoto = !!item.src;
+            const div = document.createElement('div');
+
+            div.className = `portfolio-item reveal ${hasPhoto ? '' : 'is-placeholder'}`;
+            div.dataset.label = item.label || '';
+
+            if (hasPhoto) {
+                div.innerHTML = `<img src="${escapeHTML(item.src)}" alt="${escapeHTML(item.label || 'Portfolio')}" loading="lazy">`;
+            }
+
+            portfolioEl.appendChild(div);
+        });
+    }
         }
 
-        // Дёргаем reveal-observer вручную: новые элементы вставлены после DOMContentLoaded
         if (window.observeReveals) window.observeReveals();
-    }
 
     // -------- PRICING --------
     const pricingEl = document.getElementById('pricing-grid');

@@ -4,8 +4,8 @@
     <script>document.documentElement.className += ' js';</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Студийная съёмка — Виктория, фотограф в Москве</title>
-    <meta name="description" content="Студийная фотосъёмка в Москве. Портреты, fashion, lookbook'и. Портфолио и цены.">
+    <title>Услуги и портфолио — Виктория, фотограф в Москве</title>
+    <meta name="description" content="Индивидуальная и репоратажная фотосъёмка в Москве. Портфолио, услуги и цены.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,7 @@
         <a href="index.html" class="logo">Victoria</a>
         <nav class="nav" id="nav">
             <a href="index.html">Обо мне</a>
-            <a href="studio.html" class="active">Индивидуально</a>
-            <a href="corporate.html">Репортаж</a>
+            <a href="studio.html" class="active">Услуги и портфолио</a>
         </nav>
         <button class="burger" id="burger" aria-label="Меню">
             <span></span><span></span><span></span>
@@ -31,7 +30,7 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <span class="eyebrow reveal">01 / Основное направление</span>
+            <span class="eyebrow reveal">Услуги и портфолио</span>
             <h1>
                 <span class="line line-mask"><span>Индивидуально</span></span>
             </h1>
@@ -71,6 +70,19 @@
             <div class="portfolio-grid" id="portfolio-grid" data-category="studio">
                 <!-- Подгружается из Supabase через js/render.js -->
             </div>
+
+        <section class="portfolio-section" id="corporate">
+            <div class="section-header reveal">
+                <span class="section-label">Портфолио</span>
+                <h2>Корпоративная съёмка</h2>
+                <p>Бизнес-портреты, командные съёмки и мероприятия.</p>
+            </div>
+
+            <div class="portfolio-grid" data-category="corporate">
+                <!-- Корпоративные фотографии загружаются через js/render.js -->
+            </div>
+
+        </section>
         </div>
     </section>
 
@@ -81,7 +93,7 @@
                 <span class="eyebrow reveal">Цены</span>
                 <h2 data-split>Три формата<br>под разные задачи</h2>
             </div>
-            <div class="pricing-grid" id="pricing-grid" data-category="studio">
+            <div class="pricing-grid" id="pricing-grid">
                 <!-- Подгружается из Supabase через js/render.js -->
             </div>
         </div>

@@ -1308,8 +1308,8 @@ section {
 
 .portfolio-carousel .portfolio-item {
     display: block;
-    flex: 0 0 calc((100% - 48px) / 3);
-    width: calc((100% - 48px) / 3);
+    flex: 0 0 100%;
+    width: 100%;
     min-width: 0;
     margin: 0;
     break-inside: auto;

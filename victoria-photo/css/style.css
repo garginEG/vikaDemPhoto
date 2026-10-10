@@ -1002,7 +1002,7 @@ section {
         flex-wrap: nowrap;
         gap: 12px;
         flex: 1 1 0;
-        width: 0;
+        width: 100%;
         min-width: 0;
         columns: auto;
         column-count: 1;

@@ -1010,6 +1010,7 @@ section {
     }
 
     .portfolio-carousel .portfolio-item {
+        background: #F2EFEA;
         box-sizing: border-box;
         flex: 0 0 100%;
         width: 100%;
@@ -1307,6 +1308,7 @@ section {
 
 
 .portfolio-carousel .portfolio-item {
+    background: #F2EFEA;
     display: block;
     flex: 0 0 100%;
     width: 100%;
